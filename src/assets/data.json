@@ -1,0 +1,45 @@
+[
+  {
+    "id": 1,
+    "name": "Mikazuki Munechika",
+    "price": 120.5,
+    "url": "https://img.amiami.com/images/product/review/172/FIGURE-031251_02.jpg",
+    "description": "Touken Ranbu Online - Mikazuki Munechika Awakened Ver. 1/8 Complete"
+  },
+  {
+    "id": 2,
+    "name": "Yuta Okkotsu",
+    "price": 249.99,
+    "url": "https://img.amiami.com/images/product/review/214/FIGURE-134961_05.jpg",
+    "description": "Movie Jujutsu Kaisen 0 Yuta Okkotsu 1/7 Complete Figure(Released)"
+  },
+  {
+    "id": 3,
+    "name": "Asuna",
+    "price": 79.99,
+    "url": "https://img.amiami.com/images/product/review/182/FIGURE-039502_11.jpg",
+    "description": "Sword Art Online the Movie: Ordinal Scale - Asuna (Undine Ver.) 1/7 Complete Figure(Released)"
+  },
+  {
+    "id": 4,
+    "name": "Yuri Plisetsky",
+    "price": 129.99,
+    "url": "https://img.amiami.com/images/product/review/181/FIGURE-036834_12.jpg",
+    "description": "[Exclusive Sale] G.E.M. Series - Yuri on Ice: Yuri Plisetsky 1/8 Complete Figure(Released)"
+  },
+  {
+    "id": 5,
+    "name": "Kyoka Jiro",
+    "price": 55.99,
+    "url": "https://img.amiami.com/images/product/review/192/FIGURE-049801_07.jpg",
+    "description": "My Hero Academia Kyoka Jiro Hero Suit Ver. 1/8 Complete Figure(Released)"
+  },
+  {
+    "id": 6,
+    "name": "Ash Lynx ",
+    "price": 100.99,
+    "url": "https://img.amiami.com/images/product/review/184/FIGURE-045116_08.jpg",
+    "description": "[Exclusive Sale] [Bonus] G.E.M. Series BANANA FISH Ash Lynx Complete Figure(Released)"
+  }
+]
+

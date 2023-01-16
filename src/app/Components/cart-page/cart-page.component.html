@@ -1,0 +1,48 @@
+<!-- cart is empty -->
+<div *ngIf="Figures.length == 0 ; else cartFull"> 
+    <div class="empty-cart-message">
+        You have not yet added any items to your cart. 
+        </div>
+        <div class="empty-cart-message">
+            Please check our list of figures &nbsp; <a routerLink="/"> HERE </a>
+        </div>
+</div>
+
+<!-- cart is full -->
+<ng-template #cartFull class="cart-container">
+    <div class="cart-container">
+    <div class="cart-item-details">
+        <div *ngFor="let figuresCart of Figures" class="cart-item"> 
+            <img class="" src='{{figuresCart.url}}'>
+            <div class="cart-panel">
+                <div class="product-item-detail">{{figuresCart.name}} <br> ${{figuresCart.price}}</div>
+                <div class="product-item-detail">
+                    <select (change)="CartTotal(figuresCart.id, $event)" class="form-select" aria-label="Default select example">
+                        <option *ngFor="let figureOp of figuresCount"[ngValue]="figureOp" [selected]="figuresCart.option == figureOp"> {{ figureOp }}
+                        </option>
+                    </select>    
+                    <button (click)="removeCart(figuresCart.id)" class="product-item-detail btn btn-primary mt-2">Remove</button> 
+                </div>
+            </div>
+        </div>
+        <div class="cart-item"><b>Total Price: ${{ totalPrice }}</b></div>
+    </div>
+    <div class="form-margin">
+        <form class="form-margin" #form="ngForm" (ngSubmit)="onSubmit()">
+            <h1> Checkout </h1>
+            <!-- all fields are required -->
+            <label>Full Name: </label><br />
+            <input type='text' name='fullName' placeholder="Full Name" minlength="5" maxlength="10" [(ngModel)]="fullName" required>
+            <br>
+            <label>Shipping Address: </label><br />
+            <input type='text' name='address' placeholder="Shipping Address" minlength="10" maxlength="20" [(ngModel)]="address" required>
+            <br>
+            <label>Credit Card Number: </label><br />
+            <input type='text' name='creditCard' placeholder="xxxx-xxxx-xxxx-xxxx" minlength="16" maxlength="16" [(ngModel)]="creditCard" required>
+            <br>
+            <!-- button is only enabled when all fields are filled -->
+            <button [disabled]="form.invalid" type='submit' class="btn btn-primary">SUBMIT</button> 
+        </form>
+    </div>
+    </div>
+</ng-template>
