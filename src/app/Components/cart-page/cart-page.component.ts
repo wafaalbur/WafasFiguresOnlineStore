@@ -54,8 +54,8 @@ export class CartPageComponent implements OnInit {
 
   CartTotal(id: number, event: number | any ): void {
     //show total proce in acrt based on how many items are in teh cart
-    const selectedOption = event.target.options[event.target.options.selectedIndex].value;
-    this.Figures[this.Figures.findIndex(cart => cart.id == id)].option = selectedOption
+    this.Figures[this.Figures.findIndex(cart => cart.id == id)].option 
+    = event.target.options[event.target.options.selectedIndex].value;
     this.TotalPrice();
   }
 

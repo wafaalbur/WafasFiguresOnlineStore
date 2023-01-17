@@ -2,11 +2,9 @@
 <div class="product-index">
     <div class="" *ngFor="let product of products" >
         <a routerLink="figure-detail/{{ product.id }}"> <img class="product-image" src='{{ product.url }}'></a>
-        <div class="product-detail"><b>{{ product.name }}</b></div>
-        <div class="product-detail">$ {{ product.price}}</div>
+        <div class="product-detail"><b>{{ product.name }}</b> <br> ${{ product.price}}</div>
         <form (ngSubmit)="onSubmit(product)" class="product-detail">
-            <select [(ngModel)]="selectedItem" class="product-detail" (ngModelChange)="Selection($event)" 
-                [ngModelOptions]="{ standalone: true }">
+            <select class="product-detail form-select" (ngModelChange)="Selection($event)">
                 <option *ngFor="let value of figuresCount" [value]="value"> {{ value }}</option>
               </select>
             <input type="submit" value="Add to Cart" class="product-detail btn btn-outline-primary mt-2">

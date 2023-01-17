@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Figures } from '../models/figures';
 // import { FiguresCart } from '../../models/figuresCart';
 import { FiguresService } from '../../Services/figures.service';
@@ -9,12 +9,13 @@ import { FiguresService } from '../../Services/figures.service';
   styleUrls: ['./figures-list.component.css']
 })
 export class FiguresListComponent implements OnInit {
+  @Input() products: Figures[] = [];
   //input dropdown count
   figuresCount: string[]= ["1", "2", "3", "4", "5"];
   //
 
   constructor(private figService: FiguresService){}
-  products: Figures[] = [];
+  // products: Figures[] = [];
   ngOnInit(): void {
     this.figService.getallFigures().subscribe(res =>{
       this.products = res;

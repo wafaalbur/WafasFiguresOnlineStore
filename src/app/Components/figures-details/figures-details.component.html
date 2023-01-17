@@ -1,16 +1,12 @@
 <div class="detail-container">
-        <img class="product-image" src='{{figure.url}}'>
-        <div class="detail-item">
-            <div class="product-title" ><b>{{ figure.name }}</b></div>
-            <div class="product-item-detail" >${{ figure.price }}</div>
-            <div class="product-item-detail" >{{ figure.description }}</div>
+<img class="product-image" src='{{figure.url}}'>
+    <div class="detail-item">
+        <div class="product-title" ><b>{{ figure.name }}</b></div>
+            <div class="product-item-detail" >${{ figure.price }} <br> {{ figure.description }}</div>
             <form (ngSubmit)="onSubmit(figure)">
-                <select [(ngModel)]="selectedItem" style="width: 100px" class="product-item-detail" 
-                    (ngModelChange)="Selection($event)" 
+                <select style="width: 100px;" [(ngModel)]="selectedItem" class="product-item-detail" (ngModelChange)="Selection($event)" 
                     [ngModelOptions]="{ standalone: true }">
-                    <option *ngFor="let value of figuresCount" value="{{ value }}">
-                      {{ value }}
-                    </option>
+                    <option *ngFor="let value of figuresCount" [value]="value"> {{ value }}</option>
                   </select>
                 <input type="submit" value="Add to Cart" class="product-item-detail btn btn-primary">
                 <div class="product-item-detail"><a routerLink="/" class="back-link">Return to store</a></div>

@@ -8,6 +8,11 @@ import { CheckoutPageComponent } from './Components/checkout-page/checkout-page.
 
 // sets up routes constant where you define your routes
 // with thier components with the <router-outlet> in the template
+
+// <****************************************SOURCES****************************************>
+// sources: CLI application routing module && Add a hero detail route
+// at https://angular.io/guide/router && https://angular.io/tutorial/tour-of-heroes/toh-pt5 
+
 const routes: Routes = [
   {path: '',  title: 'Figure Store Front Page', component: FiguresListComponent},
   {path: 'cart', title: 'Your Cart', component: CartPageComponent},
@@ -23,5 +28,3 @@ const routes: Routes = [
 
 export class AppRoutingModule {}
 
-// sources: CLI application routing module && Add a hero detail route
-// at https://angular.io/guide/router && https://angular.io/tutorial/tour-of-heroes/toh-pt5 

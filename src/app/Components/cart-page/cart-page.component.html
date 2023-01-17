@@ -7,7 +7,6 @@
             Please check our list of figures &nbsp; <a routerLink="/"> HERE </a>
         </div>
 </div>
-
 <!-- cart is full -->
 <ng-template #cartFull class="cart-container">
     <div class="cart-container">
@@ -16,11 +15,11 @@
             <img class="" src='{{figuresCart.url}}'>
             <div class="cart-panel">
                 <div class="product-item-detail">{{figuresCart.name}} <br> ${{figuresCart.price}}</div>
-                <div class="product-item-detail">
-                    <select (change)="CartTotal(figuresCart.id, $event)" class="form-select" aria-label="Default select example">
-                        <option *ngFor="let figureOp of figuresCount"[ngValue]="figureOp" [selected]="figuresCart.option == figureOp"> {{ figureOp }}
-                        </option>
+                <div class="product-item-detail"> 
+                    <select (change)="CartTotal(figuresCart.id, $event)" style="width: 100px;">
+                        <option *ngFor="let value of figuresCount" [selected]="figuresCart.option == value"> {{value}}</option>
                     </select>    
+                    <br>
                     <button (click)="removeCart(figuresCart.id)" class="product-item-detail btn btn-primary mt-2">Remove</button> 
                 </div>
             </div>
