@@ -27,7 +27,7 @@ export class CartPageComponent implements OnInit {
 
   ngOnInit(): void {
     //get figures add in cart && total priec
-    this.Figures = this.FigService.getFigures();
+    this.Figures = this.FigService.ListMyLovelyFigures();
     this.TotalPrice();
   }
 

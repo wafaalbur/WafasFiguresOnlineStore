@@ -25,9 +25,9 @@ export class FiguresDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     // displaying figure by id using getallFigures service point at data.json
-    this.figService.getallFigures().subscribe(res => {
+    this.figService.ListOfAllMyLovelyFigures().subscribe(res => {
       this.figures = res;
-      this.figure = this.getFigureById(this.id)
+      this.figure = this.FigureById(this.id)
       console.log(this.figure)
     })
     //get figure by id to disbaly
@@ -36,7 +36,7 @@ export class FiguresDetailsComponent implements OnInit {
     })
   }
   
-  getFigureById(id: number | null): Figures{
+  FigureById(id: number | null): Figures{
     //get figure by id to disbaly 
     return this.figures.filter(product => product.id == id)[0];
   }
@@ -45,7 +45,7 @@ export class FiguresDetailsComponent implements OnInit {
     
     let newItem: Figures[]=[];
     //
-    const findFigure: Figures[] | [] = this.figService.getFigures();
+    const findFigure: Figures[] | [] = this.figService.ListMyLovelyFigures();
     newItem = findFigure;
     let ItemExist: boolean = false;
     //
@@ -53,10 +53,10 @@ export class FiguresDetailsComponent implements OnInit {
 
     if(checkIt) {
       checkIt.option = this.selectedItem;
-      ItemExist ? this.figService.addToCart(newItem): null;
+      ItemExist ? this.figService.PutMyAwesomeFigureInTheCart(newItem): null;
     } else {
       newItem.push(Object.assign(cartItems, {option: this.selectedItem}));
-      this.figService.addToCart(newItem)
+      this.figService.PutMyAwesomeFigureInTheCart(newItem)
       const message = `You have add ${cartItems.name}'s figure in your cart.`;
       alert(message);
     }

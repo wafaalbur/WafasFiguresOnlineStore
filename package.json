@@ -7,7 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "watch": "ng build --watch --configuration development"
-  },
+  }, 
   "private": true,
   "dependencies": {
     "@angular/animations": "^15.0.0",
