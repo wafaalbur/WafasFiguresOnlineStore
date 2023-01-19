@@ -16,7 +16,6 @@ import { CheckoutPageComponent } from './Components/checkout-page/checkout-page.
 import { CartPageComponent } from './Components/cart-page/cart-page.component';
 
 
-
 @NgModule({
   declarations: [ // The new component is added to declarations 
     AppComponent,

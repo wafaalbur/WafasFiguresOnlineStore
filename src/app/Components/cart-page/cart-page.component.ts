@@ -1,7 +1,9 @@
-import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 import { Router } from '@angular/router';
 import { Figures } from '../models/figures';
 import { FiguresService } from '../../Services/figures.service';
+import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
+
 
 
 @Component({
@@ -20,15 +22,17 @@ export class CartPageComponent implements OnInit {
   fullName: string='';
   address: string='';
   creditCard!: number;
+  extra!: number;
   
   @Output() checkoutSuccessful: EventEmitter<string> = new EventEmitter();
 
   constructor(private FigService: FiguresService, private route: Router){}
-
+  
   ngOnInit(): void {
     //get figures add in cart && total priec
     this.Figures = this.FigService.ListMyLovelyFigures();
     this.TotalPrice();
+    
   }
 
   onSubmit() : void{
@@ -50,6 +54,9 @@ export class CartPageComponent implements OnInit {
     this.Figures.splice(this.Figures.findIndex(cart => cart.id === id),1);
     //update proce after item removal
     this.TotalPrice();
+    //show message when an item is deleted from cart 
+    const message = `You have removed an item from your cart.`;
+    alert(message);
   }
 
   CartTotal(id: number, event: number | any ): void {

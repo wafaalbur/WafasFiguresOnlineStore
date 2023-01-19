@@ -29,18 +29,24 @@
     <div class="form-margin">
         <form class="form-margin" #form="ngForm" (ngSubmit)="onSubmit()">
             <h1> Checkout </h1>
-            <!-- all fields are required -->
+            <!-- all fields are required and error messages will disappear once all fields are valid -->
             <label>Full Name: </label><br />
-            <input type='text' name='fullName' placeholder="Full Name" minlength="5" maxlength="10" [(ngModel)]="fullName" required>
+            <span style="font-size: 10px; color:rgb(251, 116, 116);" [hidden]="form.valid">Full name is required <br> & must be minimum of 5 characters</span><br>
+            <input type='text' name='fullName' placeholder="Full Name" required minlength="5" maxlength="10" [(ngModel)]="fullName">
             <br>
-            <label>Shipping Address: </label><br />
-            <input type='text' name='address' placeholder="Shipping Address" minlength="10" maxlength="20" [(ngModel)]="address" required>
+
+            <label class="mt-4">Shipping Address: </label><br/>
+            <span style="font-size: 10px; color:rgb(251, 116, 116);" [hidden]="form.valid">Shipping Address is required <br> & must be minimum of 10 characters</span><br>
+            <input type='text' name='address' placeholder="Shipping Address" required minlength="10" maxlength="20" [(ngModel)]="address">
             <br>
-            <label>Credit Card Number: </label><br />
-            <input type='text' name='creditCard' placeholder="xxxx-xxxx-xxxx-xxxx" minlength="16" maxlength="16" [(ngModel)]="creditCard" required>
+
+            <label class="mt-4">Credit Card Number: </label><br/>
+            <span style="font-size: 10px; color:rgb(251, 116, 116);" [hidden]="form.valid">Credit Card Number is required <br> & must be exactly of 16 numbers</span><br>
+            <input type='number' name='creditCard' placeholder="xxxx-xxxx-xxxx-xxxx" required minlength="16" maxlength="16" [(ngModel)]="creditCard">
             <br>
+
             <!-- button is only enabled when all fields are filled -->
-            <button [disabled]="form.invalid" type='submit' class="btn btn-primary">SUBMIT</button> 
+            <button [disabled]="form.invalid" type='submit' class="btn btn-primary mt-2">SUBMIT</button> 
         </form>
     </div>
     </div>
